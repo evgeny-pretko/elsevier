@@ -1,13 +1,8 @@
-### Simple Catalog application
+# Quality Engineer Test Assessment
 
-1. Functional requirements:
-* The Catalog should be empty (has no Documents) when created.
-* Documents should have title.
-* Documents can be added to the Catalog. (The order of the documents is not important now) 
-* Documents can be retrieved from the Catalog ordered by title. 
-* Documents should have publication year.
-* Documents can be retrieved from the Catalog ordered by publication year. 
-* Documents can be retrieved from the Catalog filtered by publication year.
+You can find results for each task in separate files:
 
-2. Test reports generated
-3. Usage of docket for the test automation execution
+[Task 1 - API Test](Task1.md)
+
+[Task 2 - Test Automation](Task2.md)
+
