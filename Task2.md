@@ -18,9 +18,9 @@ mvn clean test
 ```
 Generate test report:
 ```sh
-mvn clean test site
+mvn allure:report
 ```
-You can find generated _surefire-report.html_ file in the _target/site_ folder.
+You can find generated _index.html_ file in the _target/site/allure-maven-plugin_ folder.
 
 Build Docker image from Dockerfile:
 ```sh

@@ -1,6 +1,10 @@
 package com.mendeley.interview;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -9,7 +13,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+@DisplayName("Tests for Catalogue class")
+@Feature("Catalogue")
 class CatalogueTest {
 
     Catalogue catalogue;
@@ -22,6 +27,7 @@ class CatalogueTest {
 
     //  1.	write a test to verify that the Catalog is empty on creation.
     @Test
+    @Step @DisplayName("Catalog is empty on creation")
     void testCatalogIsEmptyOnCreation() {
 
         assertEquals(0, catalogue.size());
@@ -30,6 +36,7 @@ class CatalogueTest {
 
     //  2.	add a Document and write a test to verify the Catalog is not empty.
     @Test
+    @Step @DisplayName("Catalog is not empty after adding a document")
     void testCatalogIsNotEmptyAfterAddingDocuments() {
         Document document = new Document("Passport", 2016);
         catalogue.addDocument(document);
@@ -40,6 +47,7 @@ class CatalogueTest {
 
     //  3.	write a test to verify that retrieving documents returns the added documents.
     @Test
+    @Step @DisplayName("Retrieving a document returns the added document")
     void testGetDocumentsByYearReturnsAddedDocuments() {
         Document document = new Document("Passport", 2016);
         catalogue.addDocument(document);
@@ -57,6 +65,7 @@ class CatalogueTest {
 
     //  4.	identify and write at least 2 other possible tests
     @Test
+    @Step @DisplayName("Retrieving documents by year returns documents with provided year")
     void testGetDocumentsByYearReturnsOnlyDocumentsWithProvidedYear() {
         Document document1 = new Document("Passport", 2016);
         Document document2 = new Document("Visa", 2022);
@@ -74,6 +83,7 @@ class CatalogueTest {
     }
 
     @Test
+    @Step @DisplayName("Retrieving documents by year returns empty list if there are no documents with provided year")
     void testGetDocumentsByYearReturnsEmptyListIfThereAreNoDocumentsWithProvidedYear() {
         Document document1 = new Document("Passport", 2016);
         Document document2 = new Document("Visa", 2022);
@@ -89,6 +99,8 @@ class CatalogueTest {
     }
 
     @Test
+    @Step @DisplayName("Sorting documents by year returns documents in right order")
+    @Description("Create documents with different year values, sort by year in ascending order and verify that documents are sorted by year value.")
     void testGetSortedDocumentsReturnsDocumentsSorted() {
         Document document1 = new Document("Visa", 2022);
         Document document2 = new Document("Passport", 2016);
