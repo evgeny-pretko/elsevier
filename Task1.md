@@ -52,8 +52,8 @@ Here is a list of test ideas for functional & security checks for provided API:
   * response data is according to the schema (fields, types)
   * descriptive errors
   * there is no extra data in response (Excessive Data Exposure)
-  * is created is from db? (no data leakage about amount of users)
+  * created "id" is primary key from db? (no data leakage about amount of users)
 * special checks
-  * each user is able to interact with its own data (no Broken Authorization like PUT for other user's "id")
+  * each user is able to interact with its own data (no Broken Authorization like PUT, GET for other user's "id")
   * is number of requests per client limited? (Rate Limiting)
-  * does API produce any logs and include enough detail
+  * does API produce any logs and include enough detail?
